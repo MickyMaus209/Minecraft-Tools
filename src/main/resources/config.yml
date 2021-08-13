@@ -1,0 +1,13 @@
+companions:
+  customName: '&5Pet from&c %playerName%'
+  ##backpack size must be divisible by 9 otherwise it'ill produce a error
+  backpackSize: 45
+  speed: 1.2
+settings:
+  chef: 'MickyMaus209'
+  adminJoinMessage: '&4%playerDisplayName% &3hat den Server betreten.'
+  adminQuitMessage: '&4%playerDisplayName% &3hat den Server verlassen.'
+  joinMessage: '&8%playerDisplayName% &3hat den Server betreten.'
+  quitMessage: '&8%playerDisplayName% &3hat den Server verlassen.'
+messages:
+  gotCompanion: '&1Du hast deinen Begleiter erhalten.'

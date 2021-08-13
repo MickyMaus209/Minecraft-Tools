@@ -1,0 +1,7 @@
+name: Tools
+version: 1.0
+author: MickyMaus209
+main: de.mickymaus209.tools.Tools
+commands:
+  bow:
+    description: Explosive Bow
