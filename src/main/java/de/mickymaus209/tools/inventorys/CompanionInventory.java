@@ -30,7 +30,7 @@ public class CompanionInventory {
         this.inventory.setContents(items[0]);
     }
 
-    public void saveItems(){
+    public void saveItems() {
         final String[] values = Base64Encoding.invToBase64(inventory);
         dataFile.getConfig().set("backpack", values[0]);
         dataFile.save();

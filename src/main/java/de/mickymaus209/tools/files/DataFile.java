@@ -21,8 +21,9 @@ public class DataFile {
     }
 
     public void reload() {
-        if (!folder.exists())
+        if (!folder.exists()) {
             folder.mkdirs();
+        }
 
         cfgFile = new File(folder, file);
 
@@ -38,15 +39,17 @@ public class DataFile {
     }
 
     public FileConfiguration getConfig() {
-        if (cfg == null)
+        if (cfg == null) {
             reload();
+        }
 
         return cfg;
     }
 
     public void save() {
-        if (cfg == null || (cfgFile == null))
+        if (cfg == null || (cfgFile == null)) {
             return;
+        }
 
         try {
             cfg.save(cfgFile);

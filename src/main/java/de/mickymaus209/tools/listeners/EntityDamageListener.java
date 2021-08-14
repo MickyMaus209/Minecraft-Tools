@@ -18,15 +18,15 @@ public class EntityDamageListener implements Listener {
     }
 
     @EventHandler
-    public void onEntityDamage(EntityDamageEvent event){
-        if(!(event.getEntity() instanceof Wolf)){
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (!(event.getEntity() instanceof Wolf)) {
             return;
         }
         Wolf wolf = (Wolf) event.getEntity();
 
         //check if the damaged wolf is a companion
         PersistentDataContainer container = wolf.getPersistentDataContainer();
-        if(!container.has(plugin.getCompanionKey(), PersistentDataType.STRING)){
+        if (!container.has(plugin.getCompanionKey(), PersistentDataType.STRING)) {
             return;
         }
 

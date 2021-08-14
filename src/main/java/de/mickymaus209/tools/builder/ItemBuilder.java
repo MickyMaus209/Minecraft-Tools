@@ -42,10 +42,6 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemStack getItem() {
-        return item;
-    }
-
     public ItemMeta getItemMeta() {
         return itemMeta;
     }

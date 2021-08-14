@@ -11,14 +11,14 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 public class InventoryCloseListener implements Listener {
     private Tools plugin;
 
-    public InventoryCloseListener(Tools plugin){
+    public InventoryCloseListener(Tools plugin) {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, this.plugin);
     }
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
-        if(!event.getView().getTitle().equals(CompanionInventory.INVENTORY_TITLE)){
+        if (!event.getView().getTitle().equals(CompanionInventory.INVENTORY_TITLE)) {
             return;
         }
         //Save items in file by using Base64

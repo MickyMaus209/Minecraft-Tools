@@ -9,10 +9,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Tools extends JavaPlugin {
 
-    //Companion
     private final NamespacedKey companionKey = new NamespacedKey(this, "wolfCompanion");
-    //Bow
-    private final NamespacedKey bowKey = new NamespacedKey(this, "power");;
+    private final NamespacedKey bowKey = new NamespacedKey(this, "power");
 
     @Override
     public void onEnable() {
@@ -21,6 +19,8 @@ public class Tools extends JavaPlugin {
     }
 
     private void register() {
+
+        //Listeners
         new PlayerJoinListener(this);
         new PlayerQuitListener(this);
         new PlayerChangedWorldListener(this);
@@ -29,10 +29,12 @@ public class Tools extends JavaPlugin {
         new CompanionTimer(this);
         new EntityDamageListener(this);
         new ProjectileHitListener(this);
-        getCommand("bow").setExecutor(new BowCommand(this));
+
+        //Commands
+        new BowCommand(this);
     }
 
-    public String translate(String message){
+    public String translate(String message) {
         return ChatColor.translateAlternateColorCodes('&', getConfig().getString(message));
     }
 

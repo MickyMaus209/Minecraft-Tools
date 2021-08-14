@@ -44,7 +44,6 @@ public class ProjectileHitListener implements Listener {
             return;
         }
 
-        Arrow arrow = (Arrow) event.getEntity();
         if(event.getHitEntity() instanceof Mob || event.getHitEntity() instanceof Animals){
             return;
         }
@@ -54,6 +53,7 @@ public class ProjectileHitListener implements Listener {
             return;
         }
 
+        Arrow arrow = (Arrow) event.getEntity();
         arrow.getWorld().createExplosion(arrow.getLocation(), container.get(plugin.getBowKey(), PersistentDataType.INTEGER));
         arrow.remove();
     }

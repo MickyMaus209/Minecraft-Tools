@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class PlayerJoinListener implements Listener {
     private final Tools plugin;
 
-    public PlayerJoinListener(Tools plugin){
+    public PlayerJoinListener(Tools plugin) {
         this.plugin = plugin;
         Bukkit.getPluginManager().registerEvents(this, this.plugin);
     }
@@ -18,14 +18,14 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         //JoinMessage
-        if(this.plugin.getConfig().getString("settings.chef").equals(event.getPlayer().getName()) || event.getPlayer().hasPermission("rank.admin")){
+        if (this.plugin.getConfig().getString("settings.chef").equals(event.getPlayer().getName()) || event.getPlayer().hasPermission("rank.admin")) {
             event.setJoinMessage(this.plugin.translate("settings.adminJoinMessage").replaceAll("%playerDisplayName%", event.getPlayer().getDisplayName()));
-        }else{
+        } else {
             event.setJoinMessage(this.plugin.translate("settings.joinMessage").replaceAll("%playerDisplayName%", event.getPlayer().getDisplayName()));
         }
 
         //Companion
-        if(event.getPlayer().hasPermission("companion")) {
+        if (event.getPlayer().hasPermission("companion")) {
             Companion companion = new Companion(event.getPlayer(), this.plugin);
             companion.create();
         }

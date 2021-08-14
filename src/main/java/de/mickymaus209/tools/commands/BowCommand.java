@@ -16,6 +16,7 @@ public class BowCommand implements CommandExecutor {
 
     public BowCommand(Tools plugin) {
         this.plugin = plugin;
+        this.plugin.getCommand("bow").setExecutor(this);
     }
 
     @Override
